@@ -1,5 +1,11 @@
 "use strict";
 
+const searchFormTemplate = `
+  <form action="#" method="get">
+      <input type="search" id="search-input" class="search-input" placeholder="Search...">
+      <input type="submit" value="&#x1F50D;" id="search-submit" class="search-submit">
+  </form>`;
+
 const cardTemplate = em => {
   return `
     <div class="card">
@@ -27,7 +33,7 @@ const modalConstantsTemplate = `
     </div>
   </div>`;
 
-const modalTemplate = em => {
+const modalTemplate = (em, el) => {
   return `
     <img class="modal-img" src="${em.picture.large}" alt="profile picture">
     <h3 id="${em.name.first}-${em.name.last}" class="modal-name cap">${em.name.first} ${em.name.last}</h3>
