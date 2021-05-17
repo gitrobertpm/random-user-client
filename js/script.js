@@ -89,7 +89,7 @@ const generateModalConstants = data => {
 const addClickToCards = data => {
   document.querySelectorAll('.card').forEach( (card, i) => { 
     card.addEventListener('click', e => { 
-      const modalContainer = document.querySelector('.modal-container'); console.log(modalContainer);
+      const modalContainer = document.querySelector('.modal-container');
       modalContainer.style.display = '';
       modalContainer.classList.remove('fade-out');
       modalContainer.classList.add('fade-in');
