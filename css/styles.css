@@ -218,6 +218,38 @@ header h1 {
   }
 
 /* ===================================== 
+   Loading indicator
+======================================== */
+
+.loading-container {
+    margin: 50px auto;
+}
+
+.loading-container p {
+    font-weight: bolder;
+}
+
+.loading-indicator {
+    display: inline-block;
+    content: '';
+    width: 25px;
+    height: 25px;
+    margin-bottom: -7px;
+    padding: 5px;
+    background: url('../img/loading.png');
+    background-size: cover;
+    border-radius: 50%;
+    transition: all 0.3s ease-out;
+    animation: loadingSpin 1s infinite;
+}
+
+@keyframes loadingSpin {
+    0% {transform: rotate(0deg);}
+    100% {transform: rotate(360deg);}
+}
+
+
+/* ===================================== 
    Helper classes
 ======================================== */
 

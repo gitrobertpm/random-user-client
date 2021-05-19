@@ -2,6 +2,7 @@
 
 const gallery = document.querySelector('#gallery');
 const searchContainer = document.querySelector('.search-container');
+const loading = document.querySelector('#loading-container');
 
 // Add search form to DOM
 searchContainer.innerHTML = searchFormTemplate;
@@ -102,10 +103,11 @@ const addClickToCards = data => {
 (async () => {
   try {
     // const raw = await fetch('https://randomuser.me/api/?results=12&nat=US&lego');
-    const raw = await fetch('https://ez-random-user-api.herokuapp.com/api/');
+    const raw = await fetch('https://ez-random-user-api.herokuapp.com/api');
     // const raw = await fetch('http://localhost:5000/api');
     const data = await raw.json();
     console.log(data.results);
+    loading.style.display = 'none';
     generateCards(data.results);
     generateModalConstants(data.results);
     addClickToCards(data.results);
